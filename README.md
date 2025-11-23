@@ -9,8 +9,10 @@ This project is a static web app—no build step or backend required.
    cd expert-palm-tree
    ```
 2. Start a simple local server (pick one):
-   - Python 3: `python -m http.server 8080`
-   - Node.js: `npx serve .` (if you have `serve` installed globally, just run `serve .`)
+   - Python 3: `python3 -m http.server 8080` (use `python3` because some systems don’t provide the `python` alias)
+   - Node.js (npm):
+     * **One-off:** `npx serve .`
+     * **npm only:** `npm install -g serve` then `serve -l 8080 .` (no `npx` needed after the global install)
 3. Open your browser to http://localhost:8080 (or the port you used).
 
 > Tip: Using a local server avoids browser restrictions that sometimes block speech synthesis or audio when opening `index.html` directly from the file system.
