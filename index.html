@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Word Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__text">
+      <p class="eyebrow">Spidey &amp; Friends</p>
+      <h1>Web Word Builder</h1>
+      <p class="tagline">Tap the letters, spin the web, and help Spidey spell every word!</p>
+      <div class="control-row">
+        <button id="hear-word" class="primary">🔊 Hear Word</button>
+        <button id="next-word" class="secondary">➡️ New Word</button>
+        <label class="theme-picker">
+          <span>Hero Theme</span>
+          <select id="theme-select" aria-label="Choose hero theme">
+            <option value="spidey" selected>Spidey</option>
+            <option value="ghosty">Ghosty</option>
+            <option value="spin">Spin</option>
+            <option value="hulk">Hulk</option>
+          </select>
+        </label>
+        <label class="theme-picker">
+          <span>Difficulty</span>
+          <select id="level-select" aria-label="Choose sight-word difficulty"></select>
+        </label>
+      </div>
+      <p class="hero-line" id="hero-line">Spidey leads the Web Squad—pick a hero to color your web.</p>
+      <div class="hero-roster" id="hero-roster" aria-label="Choose a Marvel hero theme"></div>
+    </div>
+    <div class="hero__badge">
+      <p>Skills</p>
+      <ul>
+        <li>Letter-sound matching</li>
+        <li>Left-to-right spelling</li>
+        <li>Phonics practice</li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="game-shell">
+    <section class="playstage" aria-live="polite">
+      <div class="web-scene">
+        <svg class="web" viewBox="0 0 260 260" aria-hidden="true">
+          <circle cx="130" cy="130" r="120" class="web__ring"></circle>
+          <circle cx="130" cy="130" r="90" class="web__ring"></circle>
+          <circle cx="130" cy="130" r="60" class="web__ring"></circle>
+          <g id="web-lines" class="web__lines">
+            <line x1="130" y1="10" x2="130" y2="250"></line>
+            <line x1="10" y1="130" x2="250" y2="130"></line>
+            <line x1="35" y1="35" x2="225" y2="225"></line>
+            <line x1="225" y1="35" x2="35" y2="225"></line>
+            <line x1="50" y1="200" x2="210" y2="70"></line>
+            <line x1="50" y1="70" x2="210" y2="200"></line>
+            <line x1="130" y1="40" x2="220" y2="170"></line>
+            <line x1="40" y1="170" x2="220" y2="130"></line>
+          </g>
+          <g id="web-progress" class="web__progress"></g>
+        </svg>
+        <div class="spidey" role="img" aria-label="Spidey cheering">
+          <div class="spidey__mask">
+            <div class="eye eye--left"></div>
+            <div class="eye eye--right"></div>
+          </div>
+          <div class="spidey__body"></div>
+        </div>
+        <div id="message" class="message">Click the letters to build the web!</div>
+      </div>
+
+      <div class="letter-tray" aria-label="letters to build the word"></div>
+      <div class="progress">
+        <div class="progress__word" id="word-track" aria-label="Current word"></div>
+        <div class="progress__hint">Tap each letter in order. Missed? Try again!</div>
+      </div>
+    </section>
+
+    <section class="lesson">
+      <div>
+        <h2>How to Play</h2>
+        <ul>
+          <li>Tap <strong>Hear Word</strong> to listen to today’s word.</li>
+          <li>Find the first letter sound and tap its tile.</li>
+          <li>Each correct tap spins a strand of the web.</li>
+          <li>Finish the word and Spidey celebrates your win!</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Word List</h2>
+        <p class="small">300 Marvel-ready sight words organized by difficulty—swap levels to match your young hero.</p>
+        <div class="word-badges" id="word-badges"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Designed for ages 3–5 • Touch-friendly • Cheerful feedback every step of the way.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
